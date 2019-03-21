@@ -14,10 +14,12 @@ def suject_analysis(sentence):
             response = sentence.replace(pattern, "德勤数智研究院")
             return 2, response
         else:
-            for i in range(len(tags)):
-                if tags[i] in ["nr","r","n","ns","nt","nz"]:
-                    response = sentence.replace(words[i],"德勤数智研究院")
-                    return 2, response
+            n_tags = ["r","nt","nr","ns","n","nz"]
+            for n in n_tags:
+                for i in range(len(tags)):
+                    if n==i:
+                        response = sentence.replace(words[i],"德勤数智研究院")
+                        return 2, response
     return 3, sentence
 
 
