@@ -4,7 +4,7 @@ from intent_analysis import suject_analysis
 import numpy as np
 import re
 
-# 加载词向量 记得重写这段代码
+# 加载词向量 
 # PATH = "sgns.baidubaike.bigram-char"
 # global word_vec 
 # word_vec = load_word_vec(path=PATH)
@@ -13,7 +13,7 @@ import re
 # word_vec["数智研究院"] = word_vec["德勤数智研究院"]
 # word_vec["RPA"] = list(np.array(word_vec["机器人"] + word_vec["自动化"])/2)
 
-print("你好，我是来自德勤数智研究院的小Z，你可以问我一切关于德勤数智研究院的问题。我不接受闲聊哟~")
+print("你好，我是来自德勤数智研究院的小Z，你可以问我一切关于德勤数智研究院的问题。我可不接受闲聊哟~")
 while True: 
     question = input()
     if_next, response = suject_analysis(question)
