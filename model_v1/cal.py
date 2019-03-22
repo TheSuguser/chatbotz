@@ -13,3 +13,5 @@ def cos_similarity(vec1, vec2):
     similarity = np.dot(vec1,vec2) / (norm(vec1) * norm(vec2))
 
     return similarity
+
+

@@ -1,6 +1,8 @@
 import numpy as np
 import jieba
 import jieba.posseg as psg
+import pandas as pd
+from cal import cos_similarity
 
 # jieba中加入新词
 jieba.add_word("德勤数智研究院",tag="nt")
@@ -56,8 +58,36 @@ def sentence_to_vec(sentence,word_vec):
         vec[Array]: 句向量
     """
     vec = []
-    words = sentence_cut(sentence)
+    words = sentence_cut(str(sentence))
     for word in words:
         if word in word_vec:
-            vec.append(word_vec[word])
-    return np.mean(vec, axis=0)
+            vec.append(np.array(word_vec[word]))
+    print([v.shape for v in vec])
+    vec = np.vstack(vec)
+    return np.mean(np.array(vec), axis=0)
+
+def get_similarity_df(sentence, df_qa, word_vec):
+    """
+    Args:
+        sentence: string
+        qa_text: Dataframe
+    """
+    s = []
+    vec1 = sentence_to_vec(sentence, word_vec)
+    for q in df_qa['question']:
+        vec2 = sentence_to_vec(q, word_vec)
+        s.append(cos_similarity(vec1,vec2))
+    df_qa['similarity'] = s 
+    
+    return df_qa
+
+def get_answer(sentence, df_qa, word_vec):
+    df_sim = get_similarity_df(sentence, df_qa,word_vec)
+    print(df_sim)
+    idx = df_sim['similarity'].idxmax
+    return df_sim['answer'][idx], df_sim['similarity'][idx]
+
+def get_random_question(df_qa):
+    idx = np.random.randint(0,df_qa.shape[0])
+    return df_qa['question'][idx]
+
