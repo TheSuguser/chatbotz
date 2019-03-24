@@ -8,6 +8,8 @@
 
 <h4 align="center">本项目是一个封闭域内的聊天问答机器人。</h4>
 
+![screenshot](https://github.com/TheSuguser/chatbotz/raw/master/img/screencut.png)
+
 ## How to use
 ### 依赖
 * python = 3.6
