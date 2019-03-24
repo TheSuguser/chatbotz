@@ -2,7 +2,7 @@ import jieba
 from process import sentence_cut, sentence_psg_cut
 import re
 
-def suject_analysis(sentence):
+def subject_analysis(sentence):
     """
     主语分析。判断句子中是否包换德勤数智研究院。如果没有包含，则替换掉句子的主语。如果句子不存在可替换的主语，则输出原句
     Args:
@@ -33,5 +33,7 @@ def suject_analysis(sentence):
                         response = sentence.replace(words[i],'德勤数智研究院')
                         return 2, response
     return 3, sentence
+
+#print(subject_analysis("腾讯能做什么？"))
 
 

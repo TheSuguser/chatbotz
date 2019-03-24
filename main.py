@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from cal import cos_similarity
 from process import sentence_cut, sentence_to_vec, load_word_vec, get_similarity_df, get_answer, get_random_question
-from intent_analysis import suject_analysis
+from intent_analysis import subject_analysis
 from param_check import check
 import numpy as np
 import pandas as pd
@@ -50,7 +50,7 @@ def main():
         else:
             status = 0
             question = response_next
-        if_next, response = suject_analysis(question)
+        if_next, response = subject_analysis(question)
 
         if question == "q":
             exit(0)
@@ -65,6 +65,7 @@ def main():
 
         elif if_next == 2:
             answer = 'ChatbotZ: 你是不是想问"' +response + '"'
+            print("ChatbotZ", answer)
             response_next = input()
             if re.sub(r'[^\w\s]','',response_next) in ['是的','是','Yes','yes']:
                 answer, similarity = get_answer(response, df_qa, word_vec)
