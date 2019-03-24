@@ -8,10 +8,6 @@
 
 <h4 align="center">本项目是一个封闭域内的聊天问答机器人。</h4>
 
-<h1 align="center">
- <img src="https://github.com/TheSuguser/chatbotz/raw/master/img/screencut.png" alt="Markdownify" width="300">
-</h1>
-
 ## How to use
 ### 依赖
 * python = 3.6
@@ -39,7 +35,11 @@ ChatbotZ的相关配置在``param.cfg``中。因为词向量文件太大，因�
 ```
 python main.py
 ```
-注：加载词向量需要较长时间。
+注：加载词向量需要较长时间。运行时效果如下
+
+<h1 align="center">
+ <img src="https://github.com/TheSuguser/chatbotz/raw/master/img/screencut.png" alt="Markdownify" width="300">
+</h1>
 
 ## How it works
 ### ChatbotZ基本运行逻辑
