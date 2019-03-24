@@ -43,7 +43,7 @@ python main.py
 
 ## How it works
 ### ChatbotZ基本运行逻辑
-ChatbotZ的基本运行逻辑如下图所示
+ChatbotZ的基本运行逻辑参考了[ChatterBot](https://chatterbot.readthedocs.io/en/stable/index.html)框架, 如下图所示
 ![](img/chatbotz_process.png)
 
 ### 相似度计算
