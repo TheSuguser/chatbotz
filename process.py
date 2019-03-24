@@ -87,7 +87,7 @@ def sentence_to_vec(sentence,word_vec):
     for word in words:
         if word in word_vec:
             vec.append(np.array(word_vec[word]))
-    print([v.shape for v in vec])
+    #print([v.shape for v in vec])
     vec = np.vstack(vec)
     return np.mean(np.array(vec), axis=0)
 
