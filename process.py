@@ -128,7 +128,7 @@ def get_answer(sentence, df_qa, word_vec):
             相似度
     """
     df_sim = get_similarity_df(sentence, df_qa,word_vec)
-    print(df_sim)
+    #print(df_sim)
     idx = df_sim['similarity'].idxmax
     return df_sim['answer'][idx], df_sim['similarity'][idx]
 
