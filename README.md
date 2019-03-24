@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://github.com/TheSuguser/chatbotz"><img src="https://github.com/TheSuguser/chatbotz/raw/zzheng/img/logo.png" alt="Markdownify" width="400"></a>
+  <a href="https://github.com/TheSuguser/chatbotz"><img src="https://github.com/TheSuguser/chatbotz/raw/zzheng/img/logo.png"  width="400"></a>
   <br>
   ChatbotZ
   <br>
@@ -8,7 +8,9 @@
 
 <h4 align="center">本项目是一个封闭域内的聊天问答机器人。</h4>
 
-![screenshot](https://github.com/TheSuguser/chatbotz/raw/master/img/screencut.png)
+<h1 align="center">
+ <img src="https://github.com/TheSuguser/chatbotz/raw/master/img/screencut.png" alt="Markdownify" width="300">
+</h1>
 
 ## How to use
 ### 依赖
