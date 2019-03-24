@@ -40,7 +40,7 @@ def main():
     threshold = float(config.get('Model', 'threshold'))
 
     print('*****************************************************************')
-    print('你好，我是来自德勤数智研究院的小Z，你可以问我一切关于德勤数智研究院的问题。我可不接受闲聊哟~(输入“q”退出)')
+    print('ChatbotZ: 你好，我是来自德勤数智研究院的小Z，你可以问我一切关于德勤数智研究院的问题。我可不接受闲聊哟~(输入“q”退出)')
     status = 0
     response_next = ''
 
@@ -61,27 +61,27 @@ def main():
                 print(answer)
             else:
                 response = get_random_question(df_qa)
-                print('不好意思，我好像不太理解你的问题，可以重新描述一遍吗？或者你可以问我“%s”。'%response)
+                print('ChatbotZ: 不好意思，我好像不太理解你的问题，可以重新描述一遍吗？或者你可以问我“%s”。'%response)
 
         elif if_next == 2:
-            answer = '你是不是想问"' +response + '"'
+            answer = 'ChatbotZ: 你是不是想问"' +response + '"'
             print(answer)
             response_next = input()
             if re.sub(r'[^\w\s]','',response_next) in ['是的','是','Yes','yes']:
                 answer, similarity = get_answer(response, df_qa, word_vec)
                 if similarity >=threshold:
-                    print(answer)
+                    print("ChatbotZ:", answer)
                 else:
                     response = get_random_question(df_qa)
-                    print('不好意思，我好像还是不太理解你的问题，可以重新描述一遍吗？或者你可以问我“%s”。'%response)
+                    print('ChatbotZ: 不好意思，我好像还是不太理解你的问题，可以重新描述一遍吗？或者你可以问我“%s”。'%response)
 
             elif re.sub(r'[^\w\s]','',response_next) in ['不是的','不是','不', 'no', 'Non']:
-                print('那麻烦您重新提问。')
+                print('ChatbotZ: 那麻烦您重新提问。')
             else:
                 status = 1
         else:
             response = get_random_question(df_qa)
-            print('不好意思，我好像不太理解你的问题，可以重新描述一遍吗？或者你可以问我“%s”。'%response)
+            print('ChatbotZ: 不好意思，我好像不太理解你的问题，可以重新描述一遍吗？或者你可以问我“%s”。'%response)
 
 if __name__ == "__main__":
     main()
